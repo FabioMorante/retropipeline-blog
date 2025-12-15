@@ -1,0 +1,30 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const {
+  title,
+  description,
+} = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+    <main class="rp-main">
+      <section class="rp-container rp-container--page">
+        <div class="rp-title">
+          <h1>{title}</h1>
+          <hr />
+        </div>
+        <slot />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

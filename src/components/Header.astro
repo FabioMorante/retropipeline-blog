@@ -7,11 +7,11 @@ import HeaderLink from './HeaderLink.astro';
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/">Inicio</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/acerca">Acerca de</HeaderLink>
 		</div>
-		<div class="social-links">
+		<!-- <div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
@@ -39,14 +39,14 @@ import HeaderLink from './HeaderLink.astro';
 					></path></svg
 				>
 			</a>
-		</div>
+		</div> -->
 	</nav>
 </header>
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
+		background: var(--background, white);
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
 	h2 {
@@ -73,7 +73,7 @@ import HeaderLink from './HeaderLink.astro';
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
-	.social-links,
+	/*.social-links,
 	.social-links a {
 		display: flex;
 	}
@@ -81,5 +81,5 @@ import HeaderLink from './HeaderLink.astro';
 		.social-links {
 			display: none;
 		}
-	}
+	}*/
 </style>

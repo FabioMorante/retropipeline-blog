@@ -153,3 +153,61 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* =========================
+   RetroPipeline Layout
+   ========================= */
+
+.rp-main {
+  width: calc(100% - 2em);
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Contenedor de contenido (posts y páginas) */
+.rp-container {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 1em;
+  color: rgb(var(--gray-dark));
+}
+
+/* Variante para páginas estáticas (más aire arriba/abajo) */
+.rp-container--page {
+  padding: 2em 1em;
+}
+
+/* Título/encabezado reutilizable */
+.rp-title {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.rp-title h1 {
+  margin: 0 0 0.75em 0;
+}
+
+/* Metadata de post (fecha / updated) */
+.rp-date {
+  margin-bottom: 0.5em;
+  color: rgb(var(--gray));
+}
+
+.rp-last-updated {
+  font-style: italic;
+}
+
+/* Hero image (solo posts) */
+.rp-hero {
+  width: 100%;
+}
+
+.rp-hero img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+}
