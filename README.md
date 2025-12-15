@@ -4,7 +4,7 @@ Blog personal sobre:
 - Ingeniería y análisis de datos
 - Desarrollo y contenedores
 - JRPG retro
-- Anime, series y cine previo a 2020
+- Anime, series y cine previo a 2020 (puede que después también)
 
 Stack previsto:
 - Astro
