@@ -4,7 +4,8 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-:root {
+/* Legacy one */
+/* :root {
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
@@ -15,7 +16,33 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
 		rgba(var(--gray), 33%);
+} */
+
+:root {
+	--accent: #678f89;
+	/* principal (verde/cian retro) */
+	--accent-2: #8b5f7a;
+	/* malva apagado */
+	--accent-dark: #4f8f88;
+	/* variante más oscura */
+	--black: 209, 213, 216;
+	/* texto principal (claro) */
+	--gray-dark: 209, 213, 216;
+	/* texto principal */
+	--gray: 154, 163, 169;
+	/* texto secundario */
+	--gray-light: 37, 48, 56;
+	/* bordes/divisores sutiles */
+	--bg: 14, 17, 19;
+	/* fondo principal */
+	--bg-surface: 22, 27, 31;
+	/* paneles: header/footer */
+	--gray-gradient: rgba(var(--bg), 100%), rgba(var(--bg), 100%);
+	--box-shadow:
+		0 2px 10px rgba(0, 0, 0, 35%),
+		0 8px 24px rgba(0, 0, 0, 25%);
 }
+
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-regular.woff") format("woff");
@@ -23,6 +50,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-bold.woff") format("woff");
@@ -30,25 +58,31 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 body {
 	font-family: "Atkinson", sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background:
+		linear-gradient(to bottom,
+			rgba(255, 255, 255, 0.03),
+			rgba(255, 255, 255, 0.00) 220px),
+		rgb(var(--bg));
+	color: rgb(var(--gray-dark));
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
 }
+
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
 }
+
 h1,
 h2,
 h3,
@@ -59,78 +93,103 @@ h6 {
 	color: rgb(var(--black));
 	line-height: 1.2;
 }
+
 h1 {
 	font-size: 3.052em;
 }
+
 h2 {
 	font-size: 2.441em;
 }
+
 h3 {
 	font-size: 1.953em;
 }
+
 h4 {
 	font-size: 1.563em;
 }
+
 h5 {
 	font-size: 1.25em;
 }
+
 strong,
 b {
 	font-weight: 700;
 }
+
 a {
 	color: var(--accent);
 }
+
 a:hover {
-	color: var(--accent);
+	color: var(--accent-2);
 }
+
 p {
 	margin-bottom: 1em;
 }
+
 .prose p {
 	margin-bottom: 2em;
 }
+
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
+
 input {
 	font-size: 16px;
 }
+
 table {
 	width: 100%;
 }
+
 img {
 	max-width: 100%;
 	height: auto;
 	border-radius: 8px;
 }
+
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	padding: 0.15em 0.4em;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	color: rgb(var(--gray-dark));
 }
+
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
+	padding: 1.25em;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.08);
 }
-pre > code {
+
+pre>code {
 	all: unset;
 }
+
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 0;
 	font-size: 1.333em;
 }
+
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
+
 	main {
 		padding: 1em;
 	}
@@ -159,55 +218,55 @@ hr {
    ========================= */
 
 .rp-main {
-  width: calc(100% - 2em);
-  max-width: 100%;
-  margin: 0;
+	width: calc(100% - 2em);
+	max-width: 100%;
+	margin: 0;
 }
 
 /* Contenedor de contenido (posts y páginas) */
 .rp-container {
-  width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 1em;
-  color: rgb(var(--gray-dark));
+	width: 720px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 1em;
+	color: rgb(var(--gray-dark));
 }
 
 /* Variante para páginas estáticas (más aire arriba/abajo) */
 .rp-container--page {
-  padding: 2em 1em;
+	padding: 2em 1em;
 }
 
 /* Título/encabezado reutilizable */
 .rp-title {
-  margin-bottom: 1em;
-  padding: 1em 0;
-  text-align: center;
-  line-height: 1.2;
+	margin-bottom: 1em;
+	padding: 1em 0;
+	text-align: center;
+	line-height: 1.2;
 }
 
 .rp-title h1 {
-  margin: 0 0 0.75em 0;
+	margin: 0 0 0.75em 0;
 }
 
 /* Metadata de post (fecha / updated) */
 .rp-date {
-  margin-bottom: 0.5em;
-  color: rgb(var(--gray));
+	margin-bottom: 0.5em;
+	color: rgb(var(--gray));
 }
 
 .rp-last-updated {
-  font-style: italic;
+	font-style: italic;
 }
 
 /* Hero image (solo posts) */
 .rp-hero {
-  width: 100%;
+	width: 100%;
 }
 
 .rp-hero img {
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-  box-shadow: var(--box-shadow);
+	display: block;
+	margin: 0 auto;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
 }
