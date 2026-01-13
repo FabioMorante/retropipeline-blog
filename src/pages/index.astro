@@ -1,8 +1,8 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <!doctype html>
@@ -11,13 +11,121 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
-		<main>
-			<h1>Lorem Ipsum</h1>
-			<p>
-				Work in progress dude
-			</p>
+		<main class="rp-main">
+			<!-- Tarjeta principal de Home -->
+			<div class="rp-home-wrapper">
+				<!-- Header va DENTRO de la tarjeta -->
+				<Header />
+
+				<!-- Contenido de Home en 2 columnas: imagen + contenido -->
+				<section class="rp-home">
+					<!-- Columna izquierda: imagen tipo kotodama -->
+					<aside class="rp-home__rail" aria-hidden="true">
+						<div class="rp-home__railImg" role="presentation"></div>
+					</aside>
+
+					<!-- Columna derecha: hero + últimos posts + explorar -->
+					<div class="rp-home__stack">
+						<header class="rp-home__hero">
+							<p class="rp-kicker">
+								// dev logs, reseñas y notas personales
+							</p>
+
+							<h1 class="rp-home__title">RetroPipeline.dev</h1>
+
+							<p class="rp-home__subtitle">
+								Un espacio personal donde conviven lo tech y la
+								cultura pop retro.
+								<br />By AzaFrost.
+							</p>
+
+							<div class="rp-home__cta">
+								<a class="rp-btn rp-btn--primary" href="/blog"
+									>Leer lo último</a
+								>
+								<a class="rp-btn rp-btn--ghost" href="/acerca"
+									>¿Qué es esto?</a
+								>
+							</div>
+						</header>
+
+						<section class="rp-home__section">
+							<div class="rp-home__sectionHead">
+								<h2 class="rp-home__h2">>_ Últimos posts</h2>
+								<a class="rp-home__link" href="/blog"
+									>Ver archivo →</a
+								>
+							</div>
+
+							<ul class="rp-postlist" role="list">
+								<li class="rp-postlist__item">
+									<a
+										class="rp-postlist__title"
+										href="/blog/markdown-style-guide/"
+									>
+										Markdown Style Guide
+									</a>
+									<div class="rp-postlist__meta">
+										Jun 19, 2024 · dev log
+									</div>
+									<p class="rp-postlist__desc">
+										Un post de prueba para revisar estilos,
+										bloques de código y tipografía.
+									</p>
+								</li>
+
+								<li class="rp-postlist__item">
+									<a
+										class="rp-postlist__title"
+										href="/blog/using-mdx/"
+									>
+										Using MDX
+									</a>
+									<div class="rp-postlist__meta">
+										Jun 1, 2024 · notas
+									</div>
+									<p class="rp-postlist__desc">
+										Notas rápidas sobre contenido y
+										componentes, sin sobrecargar el layout.
+									</p>
+								</li>
+
+								<li class="rp-postlist__item">
+									<a
+										class="rp-postlist__title"
+										href="/blog/third-post/"
+									>
+										Third post
+									</a>
+									<div class="rp-postlist__meta">
+										Jul 22, 2022 · retro
+									</div>
+									<p class="rp-postlist__desc">
+										Entrada antigua del template; luego la
+										reemplazamos por contenido real.
+									</p>
+								</li>
+							</ul>
+						</section>
+
+						<section class="rp-home__section">
+							<h2 class="rp-home__h2">>_ Explorar</h2>
+
+							<div class="rp-chips">
+								<a class="rp-chip" href="/blog">Tech</a>
+								<a class="rp-chip" href="/blog">Retro</a>
+								<a class="rp-chip" href="/blog">Dev logs</a>
+								<a class="rp-chip" href="/blog">Reseñas</a>
+							</div>
+						</section>
+					</div>
+				</section>
+				<footer class="rp-home__copyright">
+					© 2026 RetroPipeline.dev.
+				</footer>
+			</div>
 		</main>
-		<Footer />
+
+		<!-- <Footer /> -->
 	</body>
 </html>
