@@ -1,0 +1,27 @@
+---
+import Header from "../components/Header.astro";
+
+const { showRail = true, footerText = "© 2026 RetroPipeline.dev." } = Astro.props;
+---
+
+<main class="rp-main">
+  <div class="rp-home-wrapper">
+    <Header />
+
+    <section class="rp-home">
+      {showRail && (
+        <aside class="rp-home__rail" aria-hidden="true">
+          <div class="rp-home__railImg" role="presentation"></div>
+        </aside>
+      )}
+
+      <div class="rp-home__stack">
+        <slot />
+      </div>
+    </section>
+
+    <footer class="rp-home__copyright">
+      {footerText}
+    </footer>
+  </div>
+</main>

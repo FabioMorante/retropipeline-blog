@@ -26,7 +26,7 @@ const TAGLINE = "// dev logs, reseñas y notas personales";
 <style>
 	.rp-header {
 		margin: 0;
-		padding: 0 1em;
+		padding: 0;
 
 		background: rgb(var(--bg-surface));
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -37,24 +37,30 @@ const TAGLINE = "// dev logs, reseñas y notas personales";
 	}
 
 	.rp-nav {
-		max-width: 1100px;
+		width: 100%;
+		max-width: 1380px;
 		margin: 0 auto;
+
+		box-sizing: border-box;
+		padding: 0.85rem clamp(1.2rem, 2vw, 2.2rem);
+
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: space-between;
-		gap: 1.5em;
+		gap: 1.5rem;
 	}
 
 	.brand {
 		display: flex;
 		flex-direction: column;
-		gap: 0.35em;
+		gap: 0.08em;
 	}
 
 	.title {
 		margin: 0;
 		font-size: 1.15em;
 		letter-spacing: 0.01em;
+		line-height: 1.1;
 	}
 
 	.title a {
@@ -68,9 +74,11 @@ const TAGLINE = "// dev logs, reseñas y notas personales";
 
 	.tagline {
 		margin: 0;
+		margin-top: -0.1rem;
 		color: rgb(var(--gray));
 		font-size: 0.95em;
 		letter-spacing: 0.01em;
+		line-height: 1.2;
 	}
 
 	.internal-links {

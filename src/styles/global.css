@@ -244,8 +244,8 @@ hr {
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  min-height: calc(100vh - 64px);
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* Contenedor de contenido (posts y páginas) */
@@ -362,7 +362,7 @@ hr {
 .rp-home__hero {
   padding: 0 0 1rem 0;
   margin: 0;
-  border-bottom: 1px solid rgba(var(--rp-border), 0.18);
+  /* border-bottom: 1px solid rgba(var(--rp-border), 0.18); */
   text-align: left;
 }
 
@@ -438,7 +438,7 @@ hr {
 
 .rp-home__h2 {
   margin: 0;
-  font-size: 1.05em;
+  font-size: 1.25em;
   color: rgb(var(--gray-dark));
   letter-spacing: 0.02em;
 }
@@ -456,7 +456,8 @@ hr {
 
 .rp-home__stack {
   flex: 1;
-  overflow-y: visible;      /* Sin scroll interno en desktop */
+  overflow-y: visible;
+  /* Sin scroll interno en desktop */
   padding: 1.4rem 2rem;
   display: flex;
   flex-direction: column;
@@ -497,7 +498,7 @@ hr {
 
 .rp-postlist__meta {
   margin-top: 0.25em;
-  font-size: 0.9em;
+  font-size: 1.1em;
   color: rgb(var(--gray));
 }
 
@@ -541,7 +542,8 @@ hr {
 }
 
 .rp-home-wrapper {
-  width: min(1380px, 100% - 2rem);  /* antes 1240px */
+  width: min(1380px, 100% - 2rem);
+  /* antes 1240px */
   margin: 0 auto;
   height: 100%;
   max-height: 100%;
@@ -592,13 +594,18 @@ hr {
   font-size: 0.85rem;
   color: rgb(var(--gray));
   border-top: 1px solid rgba(var(--rp-border), 0.14);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* === Desktop: que TODO quepa en el frame sin scroll === */
 @media (min-width: 1024px) {
   .rp-main {
-    height: calc(100vh - 56px);
-    min-height: calc(100vh - 56px);
+    height: 100vh;
+    min-height: 100vh;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -606,14 +613,15 @@ hr {
   }
 
   .rp-home-wrapper {
-    width: min(1380px, 100% - 2rem);  /* antes 1240px */
+    width: min(1380px, 100% - 2rem);
+    /* antes 1240px */
     height: 100%;
     max-height: 100%;
     font-size: 0.95rem;
   }
 
   .rp-home__content {
-    padding: 1.6rem 2.3rem 1.6rem;
+    padding: 1.6rem 2.2rem 1.7rem;
     gap: 1.2rem;
   }
 
@@ -637,7 +645,7 @@ hr {
   }
 
   .rp-home__title {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     margin-bottom: 0.25rem;
   }
 
@@ -656,12 +664,12 @@ hr {
 
   .rp-postlist__meta {
     margin-top: 0.04rem;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 
   .rp-postlist__desc {
     margin-top: 0.30rem;
-    font-size: 0.80rem;
+    font-size: 0.90rem;
   }
 
   .rp-chip {
@@ -677,5 +685,10 @@ hr {
   .rp-home__copyright {
     padding: 0.45rem 1.9rem 0.55rem;
     font-size: 0.8rem;
+  }
+
+  .rp-home__sectionHead {
+    margin-top: 0.2rem;
+    margin-bottom: 0.8rem;
   }
 }

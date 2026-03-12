@@ -1,114 +1,477 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const selectedTag = Astro.url.searchParams.get("tag") ?? "";
+const selectedSort = Astro.url.searchParams.get("sort") ?? "new";
+const selectedQ = Astro.url.searchParams.get("q") ?? "";
+
+const allPosts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// tags únicos (si no existen tags, queda lista vacía y el select solo tendrá "Todos")
+const tagSet = new Set<string>();
+for (const p of allPosts) (p.data.tags ?? []).forEach((t) => tagSet.add(t));
+const allTags = Array.from(tagSet).sort((a, b) => a.localeCompare(b));
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={`${SITE_TITLE} · Blog`} description={SITE_DESCRIPTION} />
+
+    <style>
+      .rp-main {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .rp-blog {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        flex: 1;
+        min-height: 0;
+      }
+
+      .rp-blog__panel {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        min-height: 0; 
+      }
+
+      .rp-blog__top {
+        flex: 0 0 auto;
+        padding: 1.6rem 2.2rem 1rem;
+        border-bottom: 1px solid rgba(var(--rp-border), 0.14);
+      }
+
+      .rp-blog__title {
+        margin: 0;
+        font-size: 1.35rem;
+      }
+
+      .rp-blog__sub {
+        margin: 0.35rem 0 0;
+        color: rgb(var(--gray));
+        font-size: 0.95rem;
+      }
+
+      .rp-blog__controls {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1.6fr 1fr 1fr auto;
+        gap: 0.9rem;
+        align-items: end;
+      }
+
+      .rp-field label {
+        display: block;
+        color: rgb(var(--gray));
+        font-size: 0.8rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .rp-input,
+      .rp-select {
+        width: 100%;
+        padding: 0.65rem 0.8rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        color: rgb(var(--gray-dark));
+        outline: none;
+      }
+
+      .rp-input:focus,
+      .rp-select:focus {
+        border-color: rgba(var(--rp-border), 0.22);
+      }
+
+      .rp-apply {
+        height: 40px;
+        padding: 0 0.95rem;
+        border-radius: 10px;
+        border: 1px solid rgba(103, 143, 137, 0.35);
+        background: rgba(103, 143, 137, 0.18);
+        color: rgb(var(--gray-dark));
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .rp-blog__metaRow {
+        margin-top: 0.85rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        color: rgb(var(--gray));
+        font-size: 0.85rem;
+      }
+
+      /* =========================
+         Results (scrolleable)
+         ========================= */
+      .rp-blog__results {
+        flex: 1 1 auto;
+        min-height: 0; /* CLAVE */
+        overflow-y: auto;
+        padding: 1.2rem 2.2rem 1.4rem;
+      }
+
+      .rp-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.1rem;
+      }
+
+      .rp-card {
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(var(--rp-surface), 0.65);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 240px;
+      }
+
+      .rp-card:hover {
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .rp-card a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .rp-card__img {
+        height: 140px;
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      /* CLAVE: que el hero no quede letterbox */
+      .rp-card__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 0; /* evita doble redondeo dentro de la card */
+        border: 0;
+      }
+
+      /* fallback visual si no hay heroImage */
+      .rp-card__img:empty {
+        background:
+          radial-gradient(600px 300px at 30% 30%, rgba(103,143,137,.18), transparent 60%),
+          radial-gradient(600px 300px at 70% 70%, rgba(139,95,122,.14), transparent 60%),
+          rgba(255,255,255,.03);
+      }
+
+      .rp-card__body {
+        padding: 0.95rem 1rem 1rem;
+      }
+
+      .rp-card__title {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .rp-card__desc {
+        margin: 0.45rem 0 0;
+        color: rgb(var(--gray));
+        font-size: 0.9rem;
+      }
+
+      .rp-card__meta {
+        margin-top: 0.55rem;
+        color: rgb(var(--gray));
+        font-size: 0.8rem;
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .rp-pill {
+        display: inline-flex;
+        padding: 0.22rem 0.55rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.03);
+        color: rgb(var(--gray-dark));
+        font-size: 0.78rem;
+      }
+
+      .rp-pager {
+        margin-top: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgb(var(--gray));
+        font-size: 0.85rem;
+      }
+
+      .rp-pager button {
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.03);
+        color: rgb(var(--gray-dark));
+        padding: 0.5rem 0.75rem;
+        cursor: pointer;
+      }
+
+      .rp-pager button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* footer igual que home */
+      .rp-home__copyright {
+        padding: 0.45rem 1.9rem 0.55rem;
+        font-size: 0.8rem;
+        color: rgb(var(--gray));
+        border-top: 1px solid rgba(var(--rp-border), 0.14);
+        text-align: center;
+      }
+
+      /* Responsive */
+      @media (max-width: 980px) {
+        .rp-grid { grid-template-columns: 1fr; }
+        .rp-blog__controls { grid-template-columns: 1fr; }
+        .rp-blog { grid-template-columns: 1fr; }
+        .rp-home__rail { display: none; }
+
+        /* en mobile mejor scroll normal de página */
+        .rp-blog__results {
+          overflow: visible;
+          min-height: auto;
+        }
+      }
+
+      /* desktop spacing parecido a tu home ajustado */
+      @media (min-width: 1024px) {
+        .rp-blog__top { padding: 1.6rem 2.2rem 1rem; }
+        .rp-blog__results { padding: 1rem 1.75rem 1.1rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="rp-main">
+      <div class="rp-home-wrapper">
+        <Header />
+
+        <!-- reutiliza clases del home para que el rail sea idéntico -->
+        <section class="rp-home rp-blog">
+          <aside class="rp-home__rail" aria-hidden="true">
+            <div class="rp-home__railImg" role="presentation"></div>
+          </aside>
+
+          <div class="rp-home__stack rp-blog__panel">
+            <header class="rp-blog__top">
+              <h1 class="rp-blog__title">>_ Blog</h1>
+              <p class="rp-blog__sub">
+                Archivo RetroPipeline: navega por entradas, busca por texto y filtra por tags.
+              </p>
+
+              <div class="rp-blog__controls">
+                <div class="rp-field">
+                  <label for="q">Buscar</label>
+                  <input
+                    id="q"
+                    class="rp-input"
+                    type="search"
+                    placeholder="título o descripción…"
+                    value={selectedQ}
+                  />
+                </div>
+
+                <div class="rp-field">
+                  <label for="tag">Tag</label>
+                  <select id="tag" class="rp-select">
+                    <option value="" selected={selectedTag === ""}>Todos</option>
+                    {allTags.map((t) => (
+                      <option value={t} selected={t === selectedTag}>{t}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div class="rp-field">
+                  <label for="sort">Orden</label>
+                  <select id="sort" class="rp-select">
+                    <option value="new" selected={selectedSort === "new"}>Más recientes</option>
+                    <option value="old" selected={selectedSort === "old"}>Más antiguos</option>
+                    <option value="az" selected={selectedSort === "az"}>Título A–Z</option>
+                    <option value="za" selected={selectedSort === "za"}>Título Z–A</option>
+                  </select>
+                </div>
+
+                <button id="apply" class="rp-apply" type="button">Aplicar</button>
+              </div>
+
+              <div class="rp-blog__metaRow">
+                <div id="count">Mostrando …</div>
+                <div id="pageInfo">Página …</div>
+              </div>
+            </header>
+
+            <div class="rp-blog__results">
+              <div id="grid" class="rp-grid">
+                {allPosts.map((post) => (
+                  <article
+                    class="rp-card"
+                    data-title={post.data.title.toLowerCase()}
+                    data-desc={(post.data.description ?? "").toLowerCase()}
+                    data-date={post.data.pubDate.valueOf()}
+                    data-tags={(post.data.tags ?? []).join("|").toLowerCase()}
+                  >
+                    <a href={`/blog/${post.id}/`}>
+                      <div class="rp-card__img">
+                        {post.data.heroImage ? (
+                          <Image src={post.data.heroImage} width={900} height={450} alt="" />
+                        ) : null}
+                      </div>
+
+                      <div class="rp-card__body">
+                        <h2 class="rp-card__title">{post.data.title}</h2>
+                        <p class="rp-card__desc">{post.data.description ?? ""}</p>
+
+                        <div class="rp-card__meta">
+                          <span><FormattedDate date={post.data.pubDate} /></span>
+                          {(post.data.tags ?? []).slice(0, 3).map((t) => (
+                            <span class="rp-pill">{t}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                ))}
+              </div>
+
+              <div class="rp-pager">
+                <button id="prev" type="button">← Anterior</button>
+                <span id="pagerText">—</span>
+                <button id="next" type="button">Siguiente →</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="rp-home__copyright">© 2026 RetroPipeline.dev.</footer>
+      </div>
+    </main>
+
+    <script>
+      const pageSize = 4;
+
+      const q = document.getElementById("q");
+      const tag = document.getElementById("tag");
+      const sort = document.getElementById("sort");
+      const apply = document.getElementById("apply");
+
+      const grid = document.getElementById("grid");
+      const cards = Array.from(grid.children);
+
+      const count = document.getElementById("count");
+      const pageInfo = document.getElementById("pageInfo");
+      const pagerText = document.getElementById("pagerText");
+      const prev = document.getElementById("prev");
+      const next = document.getElementById("next");
+
+      let page = 1;
+      let filtered = cards;
+
+      function normalize(s) {
+        return (s || "").toLowerCase().trim();
+      }
+
+      // debounce simple (evita re-render a cada tecla)
+      function debounce(fn, ms) {
+        let t;
+        return (...args) => {
+          clearTimeout(t);
+          t = setTimeout(() => fn(...args), ms);
+        };
+      }
+
+      function doFilter() {
+        const query = normalize(q.value);
+        const t = normalize(tag.value);
+
+        filtered = cards.filter((el) => {
+          const title = el.dataset.title || "";
+          const desc = el.dataset.desc || "";
+          const tags = el.dataset.tags || "";
+
+          const hitQ = !query || title.includes(query) || desc.includes(query);
+          const hitT = !t || tags.split("|").includes(t);
+
+          return hitQ && hitT;
+        });
+
+        doSort();
+        page = 1;
+        render();
+      }
+
+      function doSort() {
+        const mode = sort.value;
+        filtered.sort((a, b) => {
+          if (mode === "new") return Number(b.dataset.date) - Number(a.dataset.date);
+          if (mode === "old") return Number(a.dataset.date) - Number(b.dataset.date);
+          if (mode === "az") return (a.dataset.title || "").localeCompare(b.dataset.title || "");
+          if (mode === "za") return (b.dataset.title || "").localeCompare(a.dataset.title || "");
+          return 0;
+        });
+      }
+
+      function render() {
+        // ocultar todo
+        cards.forEach((c) => (c.style.display = "none"));
+
+        const total = filtered.length;
+        const totalPages = Math.max(1, Math.ceil(total / pageSize));
+        page = Math.min(page, totalPages);
+
+        const start = (page - 1) * pageSize;
+        const slice = filtered.slice(start, start + pageSize);
+        slice.forEach((c) => (c.style.display = ""));
+
+        count.textContent = `Mostrando ${total} resultado${total === 1 ? "" : "s"}`;
+        pageInfo.textContent = `Página ${page} / ${totalPages}`;
+        pagerText.textContent = `${Math.min(start + 1, total)}–${Math.min(start + pageSize, total)} de ${total}`;
+
+        prev.disabled = page <= 1;
+        next.disabled = page >= totalPages;
+      }
+
+      apply.addEventListener("click", doFilter);
+      prev.addEventListener("click", () => { page--; render(); });
+      next.addEventListener("click", () => { page++; render(); });
+
+      q.addEventListener("keydown", (e) => { if (e.key === "Enter") doFilter(); });
+      q.addEventListener("input", debounce(doFilter, 120));
+      tag.addEventListener("change", doFilter);
+      sort.addEventListener("change", () => { doSort(); page = 1; render(); });
+
+      // init
+      doFilter();
+    </script>
+  </body>
 </html>
