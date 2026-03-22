@@ -1,34 +1,29 @@
 ---
 import { getCollection } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import HomeExploreTags from "../components/home/HomeExploreTags.astro";
+import HomeHero from "../components/home/HomeHero.astro";
+import HomeLatestPosts from "../components/home/HomeLatestPosts.astro";
+import RPFrame from "../layouts/RPFrame.astro";
+import {
+	HOME_LATEST_POSTS_LIMIT,
+	HOME_TOP_TAGS_LIMIT,
+	SITE_DESCRIPTION,
+	SITE_TITLE,
+} from "../consts";
+import {
+	getLatestPostHref,
+	getLatestPosts,
+	getPublishedPosts,
+	getTopTags,
+} from "../utils/blog";
 
-/** Traer posts reales */
-const posts = (await getCollection("blog"))
-	.filter((p) => !p.data.draft)
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const rawPosts = await getCollection("blog");
+const posts = getPublishedPosts(rawPosts);
 
-/** Últimos N */
-const latestPosts = posts.slice(0, 3);
-const latestPost = posts[0];
-const latestHref = latestPost ? `/blog/${latestPost.id}/` : "/blog";
-
-/** Tags reales (top por frecuencia) */
-const tagCounts = new Map<string, number>();
-for (const p of posts) {
-	for (const t of p.data.tags ?? []) {
-		tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
-	}
-}
-
-const topTags = Array.from(tagCounts.entries())
-	.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-	.slice(0, 8)
-	.map(([tag]) => tag);
-
-/** util: slug safe para querystring */
-const tagToQuery = (t: string) => encodeURIComponent(t);
+const latestPosts = getLatestPosts(posts, HOME_LATEST_POSTS_LIMIT);
+const latestHref = getLatestPostHref(posts);
+const topTags = getTopTags(posts, HOME_TOP_TAGS_LIMIT);
 ---
 
 <!doctype html>
@@ -37,89 +32,10 @@ const tagToQuery = (t: string) => encodeURIComponent(t);
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<main class="rp-main">
-			<div class="rp-home-wrapper">
-				<Header />
-
-				<section class="rp-home">
-					<aside class="rp-home__rail" aria-hidden="true">
-						<div class="rp-home__railImg" role="presentation"></div>
-					</aside>
-
-					<div class="rp-home__stack">
-						<header class="rp-home__hero">
-							<p class="rp-kicker">// dev logs, reseñas y notas personales</p>
-
-							<h1 class="rp-home__title">RetroPipeline.dev</h1>
-
-							<p class="rp-home__subtitle">
-								Un espacio personal donde conviven lo tech y la cultura pop retro.
-								<br />By AzaFrost.
-							</p>
-
-							<div class="rp-home__cta">
-								<a class="rp-btn rp-btn--primary" href={latestHref}>Leer lo último</a>
-								<a class="rp-btn rp-btn--ghost" href="/acerca">¿Qué es esto?</a>
-							</div>
-						</header>
-
-						<section class="rp-home__section">
-							<div class="rp-home__sectionHead">
-								<h2 class="rp-home__h2">>_ Últimos posts</h2>
-								<a class="rp-home__link" href="/blog">Ver archivo →</a>
-							</div>
-
-							{latestPosts.length > 0 ? (
-								<ul class="rp-postlist" role="list">
-									{latestPosts.map((post) => (
-										<li class="rp-postlist__item">
-											<a class="rp-postlist__title" href={`/blog/${post.id}/`}>
-												{post.data.title}
-											</a>
-
-											<div class="rp-postlist__meta">
-												{/* fecha + primer tag si existe */}
-												{new Intl.DateTimeFormat("es-PE", {
-													year: "numeric",
-													month: "short",
-													day: "2-digit",
-												}).format(post.data.pubDate)}
-												{post.data.tags?.length ? ` · ${post.data.tags[0]}` : ""}
-											</div>
-
-											{post.data.description ? (
-												<p class="rp-postlist__desc">{post.data.description}</p>
-											) : null}
-										</li>
-									))}
-								</ul>
-							) : (
-								<p class="rp-muted" style="margin:0;">
-									Aún no hay posts publicados. Cuando subas el primero, aparecerá aquí.
-								</p>
-							)}
-						</section>
-
-						<section class="rp-home__section">
-							<h2 class="rp-home__h2">>_ Explorar</h2>
-
-							{topTags.length > 0 ? (
-								<div class="rp-chips">
-									{topTags.map((t) => (
-										<a class="rp-chip" href={`/blog?tag=${tagToQuery(t)}`}>{t}</a>
-									))}
-								</div>
-							) : (
-								<p class="rp-muted" style="margin:0;">
-									Los tags aparecerán cuando tus posts tengan `tags: [...]` en el frontmatter.
-								</p>
-							)}
-						</section>
-					</div>
-				</section>
-
-				<footer class="rp-home__copyright">© 2026 RetroPipeline.dev.</footer>
-			</div>
-		</main>
+		<RPFrame frameClass="rp-frameBody" contentClass="rp-homeLayout">
+			<HomeHero latestHref={latestHref} />
+			<HomeLatestPosts posts={latestPosts} />
+			<HomeExploreTags tags={topTags} />
+		</RPFrame>
 	</body>
 </html>

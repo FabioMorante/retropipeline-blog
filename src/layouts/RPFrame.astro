@@ -1,27 +1,40 @@
 ---
 import Header from "../components/Header.astro";
+import { SITE_COPYRIGHT } from "../consts";
 
-const { showRail = true, footerText = "© 2026 RetroPipeline.dev." } = Astro.props;
+interface Props {
+	showRail?: boolean;
+	footerText?: string;
+	frameClass?: string;
+	contentClass?: string;
+	railImageClass?: string;
+}
+
+const {
+	showRail = true,
+	footerText = SITE_COPYRIGHT,
+	frameClass = "rp-frameBody",
+	contentClass = "rp-frameContent",
+	railImageClass = "rp-home__railImg",
+} = Astro.props;
 ---
 
 <main class="rp-main">
-  <div class="rp-home-wrapper">
-    <Header />
+	<div class="rp-home-wrapper">
+		<Header />
 
-    <section class="rp-home">
-      {showRail && (
-        <aside class="rp-home__rail" aria-hidden="true">
-          <div class="rp-home__railImg" role="presentation"></div>
-        </aside>
-      )}
+		<section class={frameClass}>
+			{showRail && (
+				<aside class="rp-home__rail" aria-hidden="true">
+					<div class={railImageClass} role="presentation"></div>
+				</aside>
+			)}
 
-      <div class="rp-home__stack">
-        <slot />
-      </div>
-    </section>
+			<div class={contentClass}>
+				<slot />
+			</div>
+		</section>
 
-    <footer class="rp-home__copyright">
-      {footerText}
-    </footer>
-  </div>
+		<footer class="rp-home__copyright">{footerText}</footer>
+	</div>
 </main>

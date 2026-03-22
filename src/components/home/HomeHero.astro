@@ -1,0 +1,29 @@
+---
+import { SITE_TAGLINE } from "../../consts";
+
+interface Props {
+	latestHref: string;
+}
+
+const { latestHref } = Astro.props;
+---
+
+<header class="rp-home__hero">
+	<p class="rp-kicker">{SITE_TAGLINE}</p>
+
+	<h1 class="rp-home__title">RetroPipeline.dev</h1>
+
+	<p class="rp-home__subtitle">
+		Un espacio personal donde conviven lo tech y la cultura pop retro.
+		<br />By AzaFrost.
+	</p>
+
+	<div class="rp-home__cta">
+		<a class="rp-btn rp-btn--primary" href={latestHref}>
+			Leer lo último
+		</a>
+		<a class="rp-btn rp-btn--ghost" href="/acerca">
+			¿Qué es esto?
+		</a>
+	</div>
+</header>

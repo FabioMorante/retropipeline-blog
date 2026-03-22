@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../FormattedDate.astro";
+
+interface Props {
+	post: CollectionEntry<"blog">;
+	isInitiallyVisible?: boolean;
+}
+
+const { post, isInitiallyVisible = true } = Astro.props;
+---
+
+<article
+	class="rp-card"
+	data-title={post.data.title.toLowerCase()}
+	data-desc={(post.data.description ?? "").toLowerCase()}
+	data-date={post.data.pubDate.valueOf()}
+	data-tags={(post.data.tags ?? []).join("|").toLowerCase()}
+	style={!isInitiallyVisible ? "display:none;" : undefined}
+>
+	<a href={`/blog/${post.id}/`}>
+		<div class="rp-card__img">
+			{post.data.heroImage ? (
+				<Image
+					src={post.data.heroImage}
+					width={900}
+					height={450}
+					alt=""
+				/>
+			) : null}
+		</div>
+
+		<div class="rp-card__body">
+			<h2 class="rp-card__title">{post.data.title}</h2>
+			<p class="rp-card__desc">{post.data.description ?? ""}</p>
+
+			<div class="rp-card__meta">
+				<span><FormattedDate date={post.data.pubDate} /></span>
+				{(post.data.tags ?? []).slice(0, 3).map((t) => (
+					<span class="rp-pill">{t}</span>
+				))}
+			</div>
+		</div>
+	</a>
+</article>

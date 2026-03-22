@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BlogCard from "./BlogCard.astro";
+
+interface Props {
+	posts: CollectionEntry<"blog">[];
+	initialPostIds: Set<string>;
+	pageSize: number;
+}
+
+const { posts, initialPostIds, pageSize } = Astro.props;
+---
+
+<div id="grid" class="rp-grid">
+	{posts.map((post) => {
+		const initialIndex = posts.findIndex((p) => p.id === post.id);
+		const isInitiallyVisible =
+			initialPostIds.has(post.id) && initialIndex < pageSize;
+
+		return (
+			<BlogCard
+				post={post}
+				isInitiallyVisible={isInitiallyVisible}
+			/>
+		);
+	})}
+</div>

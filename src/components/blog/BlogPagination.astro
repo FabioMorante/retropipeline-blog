@@ -1,0 +1,29 @@
+---
+interface Props {
+	initialTotal: number;
+	initialPage: number;
+	initialTotalPages: number;
+	initialStart: number;
+	initialEnd: number;
+}
+
+const {
+	initialTotal,
+	initialPage,
+	initialTotalPages,
+	initialStart,
+	initialEnd,
+} = Astro.props;
+---
+
+<div class="rp-pager">
+	<button id="prev" type="button" disabled={initialPage <= 1}>
+		← Anterior
+	</button>
+	<span id="pagerText">
+		{initialStart}–{initialEnd} de {initialTotal}
+	</span>
+	<button id="next" type="button" disabled={initialPage >= initialTotalPages}>
+		Siguiente →
+	</button>
+</div>

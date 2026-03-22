@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section class="rp-home__section">
+	<div class="rp-home__sectionHead">
+		<h2 class="rp-home__h2">>_ Últimos posts</h2>
+		<a class="rp-home__link" href="/blog">Ver archivo →</a>
+	</div>
+
+	{posts.length > 0 ? (
+		<ul class="rp-postlist" role="list">
+			{posts.map((post) => (
+				<li class="rp-postlist__item">
+					<a class="rp-postlist__title" href={`/blog/${post.id}/`}>
+						{post.data.title}
+					</a>
+
+					<div class="rp-postlist__meta">
+						{new Intl.DateTimeFormat("es-PE", {
+							year: "numeric",
+							month: "short",
+							day: "2-digit",
+						}).format(post.data.pubDate)}
+						{post.data.tags?.length ? ` · ${post.data.tags[0]}` : ""}
+					</div>
+
+					{post.data.description ? (
+						<p class="rp-postlist__desc">{post.data.description}</p>
+					) : null}
+				</li>
+			))}
+		</ul>
+	) : (
+		<p class="rp-muted" style="margin:0;">
+			Aún no hay posts publicados. Cuando subas el primero, aparecerá aquí.
+		</p>
+	)}
+</section>

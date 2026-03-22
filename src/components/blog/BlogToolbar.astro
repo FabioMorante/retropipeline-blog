@@ -1,0 +1,62 @@
+---
+interface Props {
+	allTags: string[];
+	selectedQ?: string;
+	selectedTag?: string;
+	selectedSort?: string;
+}
+
+const {
+	allTags,
+	selectedQ = "",
+	selectedTag = "",
+	selectedSort = "new",
+} = Astro.props;
+---
+
+<header class="rp-blog__top">
+	<h1 class="rp-blog__title">Blog</h1>
+	<p class="rp-blog__sub">
+		Archivo indexado: busca por título/descripcion y filtra por tags.
+	</p>
+
+	<div class="rp-blog__controls">
+		<div class="rp-field">
+			<label for="q">Buscar</label>
+			<input
+				id="q"
+				class="rp-input"
+				type="search"
+				placeholder="título o descripción…"
+				value={selectedQ}
+			/>
+		</div>
+
+		<div class="rp-field">
+			<label for="tag">Tag</label>
+			<select id="tag" class="rp-select">
+				<option value="" selected={selectedTag === ""}>Todos</option>
+				{allTags.map((t) => (
+					<option value={t} selected={t === selectedTag}>{t}</option>
+				))}
+			</select>
+		</div>
+
+		<div class="rp-field">
+			<label for="sort">Orden</label>
+			<select id="sort" class="rp-select">
+				<option value="new" selected={selectedSort === "new"}>Más recientes</option>
+				<option value="old" selected={selectedSort === "old"}>Más antiguos</option>
+				<option value="az" selected={selectedSort === "az"}>Título A–Z</option>
+				<option value="za" selected={selectedSort === "za"}>Título Z–A</option>
+			</select>
+		</div>
+
+		<button id="apply" class="rp-apply" type="button">Aplicar</button>
+	</div>
+
+	<div class="rp-blog__metaRow">
+		<div id="count">Mostrando …</div>
+		<div id="pageInfo">Página …</div>
+	</div>
+</header>

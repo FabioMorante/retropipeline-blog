@@ -1,9 +1,6 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_TAGLINE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
-
-// Puedes cambiar este texto cuando quieras
-const TAGLINE = "// dev logs, reseñas y notas personales";
 ---
 
 <header class="rp-header">
@@ -12,7 +9,7 @@ const TAGLINE = "// dev logs, reseñas y notas personales";
 			<h2 class="title">
 				<a href="/">{SITE_TITLE}</a>
 			</h2>
-			<p class="tagline">{TAGLINE}</p>
+			<p class="tagline">{SITE_TAGLINE}</p>
 		</div>
 
 		<div class="internal-links">
@@ -27,10 +24,8 @@ const TAGLINE = "// dev logs, reseñas y notas personales";
 	.rp-header {
 		margin: 0;
 		padding: 0;
-
 		background: rgb(var(--bg-surface));
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
-
 		position: sticky;
 		top: 0;
 		z-index: 100;
@@ -40,10 +35,8 @@ const TAGLINE = "// dev logs, reseñas y notas personales";
 		width: 100%;
 		max-width: 1380px;
 		margin: 0 auto;
-
 		box-sizing: border-box;
 		padding: 0.85rem clamp(1.2rem, 2vw, 2.2rem);
-
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -88,26 +81,22 @@ const TAGLINE = "// dev logs, reseñas y notas personales";
 		white-space: nowrap;
 	}
 
-	/* Links del nav */
 	.rp-header :global(a) {
 		color: rgb(var(--gray-dark));
 		text-decoration: none;
 	}
 
-	/* Los HeaderLink suelen aplicar .active; esto lo mantiene */
 	.rp-header :global(a.active) {
 		border-bottom: 2px solid var(--accent);
 		padding-bottom: 0.35em;
 		font-weight: 600;
 	}
 
-	/* Subrayado mínimo en hover (sin “brillo”) */
 	.rp-header :global(a:hover) {
 		border-bottom: 2px solid rgba(255, 255, 255, 0.12);
 		padding-bottom: 0.35em;
 	}
 
-	/* Mobile: apila marca arriba y nav abajo */
 	@media (max-width: 720px) {
 		.rp-header {
 			padding: 1em;

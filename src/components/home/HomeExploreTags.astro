@@ -1,0 +1,28 @@
+---
+interface Props {
+	tags: string[];
+}
+
+const { tags } = Astro.props;
+
+const tagToQuery = (t: string) => encodeURIComponent(t);
+---
+
+<section class="rp-home__section">
+	<h2 class="rp-home__h2">>_ Explorar</h2>
+
+	{tags.length > 0 ? (
+		<div class="rp-chips">
+			{tags.map((t) => (
+				<a class="rp-chip" href={`/blog?tag=${tagToQuery(t)}`}>
+					{t}
+				</a>
+			))}
+		</div>
+	) : (
+		<p class="rp-muted" style="margin:0;">
+			Los tags aparecerán cuando tus posts tengan
+			<code>tags: [...]</code> en el frontmatter.
+		</p>
+	)}
+</section>
