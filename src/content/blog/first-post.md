@@ -36,6 +36,14 @@ export function formatPostTitle(title: string): string {
 
 Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
 
+## Imagen intermedia de prueba
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Esta imagen sirve para validar cómo respira el contenido dentro del post.
+
+![Panel de prueba](/img/post-3.jpg)
+
+Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus.
+
 ## Otra sección de prueba
 
 Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum.

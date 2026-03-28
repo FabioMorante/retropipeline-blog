@@ -1,0 +1,51 @@
+<div class="rp-lightbox" id="rp-lightbox" hidden>
+	<button
+		class="rp-lightbox__close"
+		id="rp-lightbox-close"
+		aria-label="Cerrar imagen"
+	>
+		×
+	</button>
+	<img class="rp-lightbox__img" id="rp-lightbox-img" alt="" />
+</div>
+
+<script>
+	const lightbox = document.getElementById("rp-lightbox");
+	const lightboxImg = document.getElementById("rp-lightbox-img");
+	const closeBtn = document.getElementById("rp-lightbox-close");
+	const contentImages = document.querySelectorAll(".rp-post__content img");
+
+	function openLightbox(src, alt = "") {
+		lightboxImg.src = src;
+		lightboxImg.alt = alt;
+		lightbox.hidden = false;
+		document.body.style.overflow = "hidden";
+	}
+
+	function closeLightbox() {
+		lightbox.hidden = true;
+		lightboxImg.src = "";
+		lightboxImg.alt = "";
+		document.body.style.overflow = "";
+	}
+
+	contentImages.forEach((img) => {
+		img.addEventListener("click", () => {
+			openLightbox(img.src, img.alt || "");
+		});
+	});
+
+	closeBtn.addEventListener("click", closeLightbox);
+
+	lightbox.addEventListener("click", (e) => {
+		if (e.target === lightbox) {
+			closeLightbox();
+		}
+	});
+
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape" && !lightbox.hidden) {
+			closeLightbox();
+		}
+	});
+</script>

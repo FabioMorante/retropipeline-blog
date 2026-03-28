@@ -1,48 +1,107 @@
 ---
-import Page from "../layouts/Page.astro";
+import BaseHead from "../components/BaseHead.astro";
+import RPFrame from "../layouts/RPFrame.astro";
+import { SITE_TITLE } from "../consts";
+import "../styles/about.css";
 ---
 
-<Page
-	title="Acerca de"
-	description="Qué es RetroPipeline.dev y por qué existe."
->
-	<p>
-		<strong>RetroPipeline.dev</strong> es un espacio personal donde se juntan
-		dos cosas que siempre me han acompañado: mi gusto por lo tech y la cultura
-		pop retro.
-	</p>
+<html lang="es">
+	<head>
+		<BaseHead
+			title={`Acerca de · ${SITE_TITLE}`}
+			description="Qué es RetroPipeline.dev y por qué existe."
+		/>
+	</head>
 
-	<p>
-		Aquí escribo sobre desarrollo web, datos en general, ciberseguridad y
-		otros temas relacionados, pero desde un enfoque relajado y curioso,
-		lejos del ruido corporativo o la presión del trabajo diario. La mayoría
-		del contenido nace como notas, dev logs o pequeñas guías que hago por
-		hobby, para explorar ideas o simplemente dejar registro de lo que voy
-		aprendiendo.
-	</p>
+	<body>
+		<RPFrame
+			frameClass="rp-frameBody"
+			contentClass="rp-frameContent rp-aboutLayout"
+		>
+			<section class="rp-about">
+				<header class="rp-about__header">
+					<p class="rp-about__kicker">
+						// archivo personal en construcción
+					</p>
+					<h1 class="rp-about__title">Acerca de</h1>
+					<hr class="rp-about__divider" />
+				</header>
 
-	<p>
-		En paralelo, el blog también funciona como una especie de bitácora donde
-		anoto recomendaciones y reflexiones sobre videojuegos (probablemente
-		JRPGs o juegos retro en su mayoría), anime, series y películas que voy
-		consumiendo y que, por una u otra razón, siento que vale la pena
-		comentar.
-	</p>
+				<div class="rp-about__grid">
+					<div class="rp-about__main">
+						<div class="rp-about__content">
+							<p class="rp-about__lead">
+								<strong>RetroPipeline.dev</strong> es mi pequeño rincón
+								en internet. Un espacio personal donde junto varias
+								cosas que me gustan y me interesan: tech, cultura
+								pop retro y proyectos que voy haciendo por curiosidad
+								o simplemente porque me nacen.
+							</p>
 
-	<p>
-		No es un sitio de tendencias ni de actualidad constante, ni tampoco lo
-		intenta. Es más bien un archivo en construcción: un lugar para guardar
-		cosas que me gustan, ideas que me rondan y proyectos personales que
-		quiero tener documentados en mi propio espacio en internet.
-	</p>
+							<p>
+								Acá voy publicando un poco de todo. A veces
+								serán notas sobre desarrollo, datos,
+								ciberseguridad o cualquier tema tech que me
+								llame la atención. Otras veces serán dev logs,
+								ideas sueltas, pequeñas guías o cosas que voy
+								aprendiendo y me provoca dejar por escrito.
+							</p>
 
-	<p>
-		Si algo de toda esta mezcolanza te resulta interesante o te sirvió de
-		algo, pues genial, para mí es un gusto tenerte aquí.
-	</p>
+							<p>
+								Pero esto no va solo de tecnología. También
+								quiero usar este espacio para hablar de
+								videojuegos, anime, series, películas y, en
+								general, de todo lo que consumo y siento que
+								merece aunque sea unas líneas. Probablemente
+								habrá bastante retro por acá, pero no quiero
+								cerrarlo solo a eso.
+							</p>
 
-	<p>
-		Atte. <strong>AzaFrost</strong>
-	</p>
+							<p>
+								No busco seguir tendencias ni estar publicando
+								por obligación. La idea es que este sitio sea
+								eso: un espacio mío, tranquilo, donde pueda
+								guardar ideas, intereses, recomendaciones y
+								proyectos personales a mi ritmo.
+							</p>
 
-</Page>
+							<p>
+								Si en medio de todo eso encuentras algo que te
+								entretenga, te sirva o simplemente te dé
+								curiosidad, entonces ya cumplió su propósito.
+							</p>
+						</div>
+
+						<footer class="rp-about__footer">
+							<p>Atte. <strong>AzaFrost</strong></p>
+						</footer>
+					</div>
+
+					<aside class="rp-about__side" aria-label="Resumen">
+						<div class="rp-aboutCard">
+							<h2 class="rp-aboutCard__title">Un poco de todo</h2>
+							<ul class="rp-aboutCard__list">
+								<li>Notas, dev logs e ideas sueltas</li>
+								<li>Tech, datos y otras curiosidades</li>
+								<li>Videojuegos, anime y cosas retro</li>
+								<li>Proyectos e intereses personales</li>
+							</ul>
+						</div>
+
+						<div class="rp-aboutCard">
+							<h2 class="rp-aboutCard__title">
+								La vibra del sitio
+							</h2>
+							<div class="rp-about__chips">
+								<span class="rp-about__chip">Personal</span>
+								<span class="rp-about__chip">Relajado</span>
+								<span class="rp-about__chip">Curioso</span>
+								<span class="rp-about__chip">A mi ritmo</span>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</section>
+		</RPFrame>
+	</body>
+</html>
