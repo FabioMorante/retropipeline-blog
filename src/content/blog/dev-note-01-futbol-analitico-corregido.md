@@ -8,8 +8,6 @@ updatedDate: 2026-04-26
 tags: ["data engineering", "football analytics"]
 ---
 
-# Dev Note #01: reconstruyendo `futbol-analitico` desde el extractor
-
 Gran parte de la idea de tener **retropipeline.dev** es justamente no abandonar mis proyectos de ocio ni dejar mis notas botadas por ahí. Después de un mes con varias altas y bajas en lo anímico, decidí retomar `futbol-analitico` para aprender más sobre el arte de la data en este deporte y, de paso, ver si eventualmente puede servir como una puerta de entrada a más chamba relacionada con fútbol y datos.
 
 Esta vez, eso sí, quise plantearlo con una idea más clara: dejar de tratarlo como un conjunto de notebooks exploratorios con containers porque sí (para flexear que sé algo de ciertos stacks, jeje) y convertirlo poco a poco en un proyecto reproducible de datos de fútbol.
