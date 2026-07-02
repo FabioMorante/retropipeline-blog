@@ -1,6 +1,6 @@
 ---
-title: "Advance Wars: Soy Kongming bro (bueno, casi)"
-description: "Un juego táctico de GBA que parece casual, pero nada que ver: me detonaron."
+title: "Advance Wars: estrategia de bolsillo que todavía funciona"
+description: "Una reseña de Advance Wars, un táctico de GBA que parece ligero por fuera, pero sostiene muy bien su fama por diseño, ritmo y profundidad."
 author: "AzaFrost"
 heroImage: "../../../public/img/advance-wars/hero.png"
 pubDate: 2026-06-07
@@ -8,7 +8,7 @@ updatedDate: 2026-06-07
 tags: ["review", "gba", "strategy", "retro gaming"]
 ---
 
-*Un juego táctico de GBA que parece casual, pero nada que ver: me detonaron.*
+*Un táctico de GBA que parece amable, pero que termina exigiendo bastante más de lo que aparenta.*
 
 - **Plataforma:** Game Boy Advance  
 - **Jugado en:** PSP liberada, porque Nintendo se emula  
@@ -16,196 +16,102 @@ tags: ["review", "gba", "strategy", "retro gaming"]
 - **Estado:** Terminado  
 - **Nota:** 3.5/5
 
-## Cómo empezó mi camino a Kongming
+## Cómo llegué a Advance Wars
 
-Llegué a *Advance Wars* porque sigo atrapado en esa fase donde quiero jugar todo lo retro que huela a juego de culto, rareza de catálogo o recomendación perdida en un foro que no cambia de diseño desde 2008.
+Llegué a *Advance Wars* porque sigo atrapado en esa fase donde quiero jugar todo lo retro que huela a juego de culto, recomendación clásica o título que aparece una y otra vez cuando la gente habla de lo mejor de una consola. En el caso de GBA, era imposible no cruzarme con este juego. Siempre aparece en listas, comentarios, foros y conversaciones sobre estrategia portátil, así que tocaba comprobar cuánto era mérito real y cuánto nostalgia colectiva de gente criada a punta de pilas AA.
 
-Además, siempre me han gustado los juegos de estrategia militar y los mapitas donde uno mueve fichas, administra recursos y empieza a hablar de geopolítica con la seguridad de alguien que jugó tres campañas de *Victoria 3* y ya se cree asesor del Pentágono.
+También ayudó que siempre me han gustado los juegos de estrategia militar y los mapitas donde uno mueve unidades, administra recursos y empieza a creerse brillante por capturar una fábrica en el momento correcto. No esperaba una experiencia especialmente dura. Por su estética colorida, sus comandantes caricaturescos y su tono de guerra de juguete, pensaba que iba a encontrar algo bastante ligero, casi un táctico casual para pasar el rato.
 
-Así que cuando vi que *Advance Wars* aparecía una y otra vez entre los mejores juegos de GBA, tocaba comprobar cuánto era mérito real y cuánto nostalgia colectiva de gente criada a punta de pilas AA.
+Naturalmente, lo jugué en mi PSP liberada. Nintendo hizo el juego, Sony puso la consola y yo puse la piratería moralmente ambigua. Integración multiplataforma, le dicen.
 
-Naturalmente, lo jugué en mi todopoderosa PSP liberada.
+## Parece simple, pero no lo es tanto
 
-Nintendo hizo el juego. Sony puso la consola. Yo puse la piratería moralmente ambigua.
+Lo primero que engaña de *Advance Wars* es su presentación. Todo se ve limpio, colorido y casi inofensivo. Los tanques explotan con animaciones bonitas, los comandantes parecen salidos de un anime militar para todo público y las unidades tienen un diseño tan claro que casi parece que el juego quiere decirte: “tranquilo, esto no será complicado”.
 
-Integración multiplataforma, le dicen los cpp en LinkedIn.
+Pero debajo de esa apariencia amable hay un juego bastante mejor construido de lo que uno podría esperar. Las reglas base son fáciles de entender: mueves unidades, atacas, capturas propiedades, produces tropas y administras dinero. No hay una barrera inicial especialmente intimidante. En pocos mapas ya entiendes qué hace la infantería, para qué sirven los tanques, por qué las ciudades importan y por qué mandar una unidad sin cobertura suele terminar mal.
 
-## Creía que era un juego Flash. Claramente me equivoqué
-
-Por su estética esperaba algo bastante casual, casi como uno de esos juegos Flash de estrategia de los 2010 donde mueves tanquecitos mientras ignoras la tarea y de fondo suena Linkin Park comprimido a 64 kbps.
-
-Todo se ve colorido, limpio y caricaturesco. Los comandantes parecen salidos de un anime militar para todo público y las batallas tienen esa energía de “nadie está muriendo, solo estamos jugando muy fuerte”.
-
-Pero debajo de eso hay un juego bastante más duro de lo que aparenta.
-
-Las reglas son sencillas: mueves unidades, atacas, capturas propiedades, produces tropas y administras dinero. La complejidad aparece cuando cada mapa toma esas reglas y empieza a doblarlas hasta obligarte a pensar en rutas, terreno, economía, combustible, munición y en ese pobre soldado que mandaste solo por media nación para robar una fábrica.
-
-Ahí entendí la fama.
-
-No era un jueguito Flash.
-
-Era una consultoría militar sin sueldo.
+La profundidad aparece cuando los mapas empiezan a combinar esas reglas de formas más exigentes. El terreno modifica combates, las propiedades sostienen la economía, las rutas importan, el combustible y la munición pueden limitarte, y cada unidad tiene una función bastante marcada. *Advance Wars* no necesita llenar la pantalla de sistemas para hacerte pensar. Su fortaleza está en tomar piezas simples y obligarte a usarlas bien.
 
 ![Captura del inicio de la campaña](/img/advance-wars/pic_01.jpg)
 
-## Ajedrez con tanques y presupuesto público
+## La gracia está en las decisiones pequeñas
 
-Lo mejor de *Advance Wars* es que no existe una única forma de jugar.
+Lo que más me gustó de *Advance Wars* es que rara vez se siente como un juego de una sola solución. Puedes ganar destruyendo al ejército rival, capturando el cuartel general, controlando el centro del mapa, dominando la economía o abriendo rutas secundarias para robar propiedades. En mi caso, terminé disfrutando bastante mandar infantería por la retaguardia mientras el frente principal se convertía en una carnicería de tanques. No siempre era elegante, pero cuando funcionaba se sentía demasiado bien.
 
-Puedes destruir al ejército rival, capturar su cuartel general, controlar el centro del mapa, producir pocas unidades caras, saturar la zona con tropas baratas o hacerte el sneaky y mandar infantería por la retaguardia para robar fábricas y estrangular su economía.
+El juego recompensa mucho la planificación por turnos. Producir una unidad no es solo gastar dinero: es decidir qué vas a necesitar dentro de dos, tres o cuatro turnos. Mover un tanque no es solo acercarlo al enemigo: es pensar si quedará expuesto a artillería, si podrá cubrir una ciudad, si bloqueará una ruta o si está abriendo espacio para una unidad más frágil. Incluso una mala posición puede arruinarte una operación completa.
 
-Esta última opción se convirtió rápidamente en mi favorita.
+Esa es una de sus mayores virtudes. Las decisiones pequeñas pesan. Una infantería colocada a tiempo puede capturar una fábrica clave. Un transporte perdido puede bloquear toda una estrategia. Un tanque mal ubicado puede convertirse en desperdicio de presupuesto público. Y cuando el juego te castiga, muchas veces entiendes exactamente por qué. No siempre se siente justo, pero casi siempre se siente lógico.
 
-Mientras el enemigo estaba ocupado intercambiando tanques al frente, yo ya había mandado a un soldado miserable por una ruta secundaria para apropiarse de medio parque industrial.
+## Una campaña que enseña bastante bien
 
-Kongming estaría orgulloso.
+La campaña empieza con un tutorial obligatorio, y aunque eso normalmente suena a amenaza, acá funciona. El juego te introduce de forma gradual a sus reglas sin convertir las primeras horas en una clase eterna. Primero aprendes movimiento y ataque, luego captura, economía, terreno, ventajas de unidades y poderes de comandante. Para cuando el tutorial termina, ya tienes una base suficiente para empezar a cometer errores más interesantes.
 
-O pediría mi ejecución por mandar infantería sin cobertura. Una de dos.
+Ese aprendizaje progresivo está bien medido. *Advance Wars* no te suelta todos sus sistemas encima desde el inicio, pero tampoco te trata como si fueras incapaz de pensar. Cada mapa agrega una presión distinta: controlar propiedades, resistir un empuje, avanzar con niebla de guerra, proteger unidades clave o resolver una situación donde el enemigo ya tiene ventaja. La campaña cumple bastante bien como escuela táctica.
 
-También importa cuándo producir una unidad, dónde colocarla, qué terreno usar y cuánto dinero estás sacrificando. Un tanque puede destrozar infantería, pero no sirve de mucho si lo dejas frente a artillería o debajo de un bomber porque te dio un ataque de confianza digno de candidato en primera vuelta.
+Lo bueno es que muchas derrotas no se sienten vacías. Había turnos donde dejaba una unidad expuesta, veía cómo el enemigo la borraba del mapa y solo podía pensar: “ah, ya, era obvio”. Ese tipo de error duele, pero también enseña. El problema no era que el juego me estuviera robando; el problema era que yo había jugado como animal con uniforme militar.
 
-Como jugador casual de ajedrez, me enganchó bastante esa sensación de preparar una jugada durante varios turnos, cerrar una trampa y sentirte un genio táctico.
-
-Cinco minutos después pierdes un transporte esencial y descubres que no eras Kongming.
-
-Eras Yamcha entrando confiado al torneo.
-
-## El juego te enseña. Luego ya es tu culpa
-
-La campaña empieza con un tutorial obligatorio, algo que normalmente sonaría a amenaza, pero acá funciona.
-
-Te enseña de forma gradual a moverte, atacar, capturar, aprovechar el terreno, administrar recursos y entender qué unidad sirve contra cuál. Para cuando termina, ya tienes suficiente información para empezar a arruinar tus propias operaciones sin ayuda externa.
-
-Y eso también es parte del encanto.
-
-Había turnos donde dejaba una unidad expuesta, veía cómo el enemigo la borraba del mapa y solo podía pensar:
-
-“Ah, ya. Era obvio.”
-
-Muchas derrotas no se sienten como un castigo arbitrario, sino como una clase práctica sobre cómo no volver a ser tan bruto.
-
-Si todavía veía una mínima ventana de victoria, me aferraba a ella como explotado de EY Perú en FIS después de escuchar “este año viene con muchos retos”. Intentaba rescatar unidades, abrir otro frente o esperar alguna estupidez del CPU.
-
-Cuando ya no había salida, reset al tiro.
-
-Recuerdo especialmente una misión contra Drake donde perdí mi transporte naval para mover lanzacohetes y entendí inmediatamente que ya no había estrategia ni intervención divina posible.
-
-Game over espiritual.
-
-Como cuando ves tu sueldo después de descuentos (te odio SUNAT).
+Recuerdo especialmente una misión contra Drake donde perdí mi transporte naval para mover lanzacohetes y entendí al instante que ya no había plan posible. No fue una derrota dramática ni una revelación compleja. Fue más simple: había tomado una mala decisión y el mapa ya no me iba a perdonar.
 
 ![Captura de una misión complicada imo](/img/advance-wars/pic_02.jpg)
 
-## Los CO hacen que cada mapa tenga personalidad
+## Los CO le dan identidad al juego
 
-El sistema de comandantes, o CO, es probablemente una de las mejores ideas del juego.
+El sistema de comandantes, o CO, es una de las mejores ideas de *Advance Wars*. No solo funciona como elemento narrativo o estético; afecta directamente la forma en que se juega cada mapa. Cada CO tiene fortalezas, debilidades y un poder especial que puede cambiar el ritmo de una batalla. Eso evita que la campaña se sienta como una sucesión plana de escenarios con distinta forma.
 
-La historia no necesita dedicar horas a explicarte quién es cada uno. Su diseño, personalidad, fortalezas y poder especial hacen casi todo el trabajo. Cada comandante cambia la forma en que juegas o el problema que debes resolver.
+Andy terminó siendo uno de mis favoritos porque su capacidad de reparación permite sostener frentes, recuperar unidades dañadas y jugar de forma más paciente. Es un CO que premia resistir, reposicionarse y mantener vivo lo que ya tienes en lugar de simplemente lanzar unidades al sacrificio. Para alguien como yo, que tiende a convertir todo en guerra de desgaste, encajó bastante bien.
 
-Andy terminó siendo uno de mis favoritos porque su reparación me permitía aguantar, defender posiciones y mantener un frente vivo mientras intentaba abrir otro por algún flanco. Encajaba perfecto con mi costumbre de convertir todo en una guerra de desgaste donde nadie gana y todos terminan debiéndole plata a Banco Falabella por tu tarjeta CMR con super descuentos.
+Drake también me pareció memorable, sobre todo porque sus mapas obligan a pensar distinto. Su presencia naval cambia prioridades, rutas y amenazas. Su poder puede ser molesto, pero también hace que sus enfrentamientos tengan identidad propia. Eagle, por otro lado, representa una presión distinta: su capacidad de actuar dos veces puede romperte una posición en segundos si no calculas bien. Ahí el juego se vuelve más tenso, porque sabes que una línea defensiva aparentemente segura puede desaparecer en un turno.
 
-Drake también me cayó bastante bien. Tiene esa energía de rival grandote de shōnen que primero parece un obstáculo y luego termina siendo demasiado carismático como para odiarlo, parece un tío que te invita ceviche después de hundirte la flota.
+Lo interesante es que los CO no necesitan una escritura profunda para funcionar. Su diseño visual, sus habilidades y el tipo de mapa donde aparecen ya comunican bastante. La historia no desarrolla demasiado a sus personajes, pero el sistema jugable les da personalidad, y eso en este tipo de juego vale mucho.
 
-Su tsunami, en cambio, sí debería ser investigado por organismos internacionales.
+## La historia cumple, aunque no sea el centro
 
-Y después está Eagle, el bigotón cuya habilidad le permite prácticamente jugar dos veces mientras tú observas cómo tu estrategia se transforma en material educativo sobre tragedias militares.
+La historia de *Advance Wars* es simple: países enfrentados, comandantes exagerados, invasiones, malentendidos y una amenaza mayor detrás de todo. No es profunda, pero tampoco intenta venderse como algo más grande de lo que es. Su función principal es conectar mapas, presentar comandantes y dar una excusa para que la campaña siga escalando.
 
-Muy bonito todo.
+El tono caricaturesco ayuda a que la experiencia no se vuelva pesada. Estás enviando ejércitos a destruirse por control territorial, pero el juego lo presenta como una aventura militar de juguete. Nadie parece particularmente traumatizado, nadie se detiene a pensar demasiado en las consecuencias y Andy probablemente ni siquiera sabe qué es un aeropuerto antes de capturarlo.
 
-## La historia es una chorrada, y está bien
+Eso podría ser un problema si el juego intentara ser serio, pero no es el caso. *Advance Wars* funciona porque entiende su tono. No necesita una trama compleja para sostenerse, porque su verdadero interés está en los mapas, las unidades y las decisiones. La historia acompaña, no estorba y deja que el sistema táctico sea el protagonista.
 
-La historia es simple: países enfrentados, comandantes exagerados, invasiones, malentendidos y una amenaza mayor detrás de todo.
+## La IA y la niebla de guerra son lo más irregular
 
-No es profunda y tampoco intenta serlo.
+Mi principal problema con *Advance Wars* fue la inconsistencia de la IA. En algunos mapas se comporta de manera bastante predecible. Puedes atraer unidades, preparar respuestas, controlar rutas y leer más o menos qué va a intentar. En otros, parece mucho más agresiva o directamente demasiado informada, sobre todo cuando entra la niebla de guerra.
 
-El mundo me recordó un poco a *Zoids*: facciones marcadas, máquinas de guerra convertidas en juguetes cool y personajes suficientemente carismáticos para sostener la aventura sin convertir cada batalla en una tesis sobre el trauma humano.
+La niebla de guerra es una buena idea en teoría, porque obliga a avanzar con cuidado, usar reconocimiento y no asumir que el mapa está vacío solo porque no ves unidades. Genera tensión y hace que cada movimiento tenga más riesgo. El problema es que, combinada con una IA irregular, algunas situaciones pueden sentirse menos como estrategia y más como una emboscada escrita de antemano.
 
-El tono caricaturesco suaviza por completo que estés enviando ejércitos a morir por control territorial.
-
-Nadie queda traumatizado. Nadie escribe memorias. Nadie enfrenta un tribunal internacional.
-
-Andy probablemente ni siquiera sabe qué es un aeropuerto.
-
-La historia cumple: conecta mapas, presenta comandantes y justifica que la dificultad siga escalando. No es pretenciosa y no intenta convencerte de que sus tanquecitos de colores representan la condición humana.
-
-Gracias a Dios.
-
-## Cuando el CPU pasa de idiota a Kasparov
-
-Mi principal problema fue la inconsistencia del CPU.
-
-En algunos mapas era bastante predecible. Podías reconocer patrones, atraer unidades y preparar respuestas con calma.
-
-En otros parecía que el cartucho había desarrollado consciencia, estudiado teoría militar y recibido financiamiento de la OTAN durante la madrugada.
-
-Esto se nota más en la niebla de guerra. Con tan poca información, cuesta distinguir entre una buena emboscada y una jugada que funciona porque el CPU parece tener acceso al Premium de Google Maps.
-
-No diría que la niebla de guerra arruina el juego, porque también genera tensión. Pero combinada con una IA tan irregular puede producir derrotas menos satisfactorias.
-
-Cuando pierdo porque dejé un tanque regalado, soy un imbécil.
-
-Cuando una unidad sale de un bosque como agente de inteligencia con información privilegiada, ya siento que hubo coordinación previa.
+No diría que arruina el juego, porque también produce momentos interesantes. Pero sí creo que es donde *Advance Wars* se siente menos limpio. Cuando pierdo una unidad porque la dejé mal ubicada, lo acepto. Cuando una unidad enemiga aparece desde un bosque con precisión quirúrgica y me destruye justo lo que necesitaba para sostener el frente, ya empiezo a sospechar que el CPU tenía Premium de Google Maps.
 
 ![Captura de un mapa con niebla de guerra](/img/advance-wars/pic_03.jpg)
 
-## Sturm, meteoritos y mi descenso a la locura
+## Sturm y la dificultad final
 
-La misión final contra Sturm fue cuando el juego dejó de tratarme como alumno y empezó a tratarme como enemigo personal.
+La misión final contra Sturm es el punto donde el juego deja de tratarte como alumno y empieza a tratarte como enemigo personal. Sturm está claramente diseñado para sentirse injusto, dominante y casi abusivo. Sus unidades pegan demasiado, su presión es constante y su poder del meteorito puede desarmarte una ofensiva justo cuando creías que estabas estabilizando la partida.
 
-Sturm está roto.
+No sé si diría que es un jefe perfectamente balanceado. Probablemente no. Pero sí es memorable. La batalla te obliga a demostrar que entendiste casi todo lo que el juego enseñó antes: defensa, economía, sacrificios, control de daños, lectura del mapa y paciencia. Intenté varias veces buscar una ofensiva más elegante, pero al final terminé jugando de forma más cautelosa: aguantar, defender, ceder espacio, esperar una ventana y usar bombers para limpiar zonas clave poco a poco.
 
-No “es fuerte”. No “representa un reto considerable”. Está roto, el pendejo.
-
-Su ejército parece tener recursos infinitos, sus unidades pegan demasiado y su poder consiste en lanzar un meteorito justo donde más pueda arruinarte la vida. Cada vez que organizaba un flanqueo o preparaba una ofensiva contra su base, aparecía la roca espacial para recordarme que los planes humanos valen menos que un ítem sin inspeccionar en *Valhalla Knights*.
-
-Hice varios intentos pensando que esa era la buena.
-
-No lo era.
-
-Al final dejé de buscar una ofensiva elegante y adopté una estrategia más cautelosa: aguantar, defender, ceder espacio, esperar la oportunidad y desplegar bombers para limpiar zonas poco a poco.
-
-Fue lento, estresante y bastante más épico de lo que esperaba.
-
-Sturm es frustrante, pero justamente por estar tan roto termina siendo uno de los elementos más memorables del juego. Es una pared gigante con lentes rojos que te obliga a demostrar si realmente aprendiste algo.
-
-Lo odié.
-
-Buen jefe.
-
-Pero lo odié.
+Fue lento y estresante, pero también bastante satisfactorio. Sturm frustra porque está roto, pero esa misma exageración hace que el cierre se sienta importante. No es un jefe que me parezca fino, pero sí funciona como pared final. Lo odié, sí. Pero lo recuerdo, y eso ya dice algo.
 
 ![Captura de la batalla final contra Sturm](/img/advance-wars/pic_04.jpg)
 
-## Un juego que no necesita ser rescatado
+## Un juego que envejeció muy bien
 
-*Advance Wars* envejeció demasiado bien.
+*Advance Wars* envejeció demasiado bien. El pixel art es limpio, expresivo y muy legible. Los retratos de los CO tienen personalidad, las animaciones de combate comunican rápido lo que ocurre y la interfaz rara vez se interpone. Para un juego táctico portátil, esa claridad importa muchísimo. Nunca sentí que estuviera peleando contra el menú o contra información mal presentada.
 
-El pixel art es limpio y expresivo, los retratos tienen personalidad, las animaciones comunican perfectamente lo que ocurre y la interfaz rara vez se interpone. La música acompaña bien y varios sonidos se quedan grabados, especialmente el efecto al crear unidades.
+La música acompaña bien y varios efectos de sonido se quedan grabados, especialmente al producir unidades. No es un apartado que me haya volado la cabeza, pero sí refuerza muy bien la identidad del juego. Todo se siente ágil, claro y coherente con ese tono de guerra estilizada.
 
-Hay algo extrañamente satisfactorio en escuchar ese sonido y ver aparecer otro tanque listo para morir por una decisión económica tomada con la misma responsabilidad con la que uno usa la tarjeta antes de la fecha de cierre.
-
-Sé que existe un remake, pero después de terminar el original no siento que lo necesite. Puedes jugarlo hoy en una GBA, una PSP liberada, un móvil o una portátil china con nombre de medicamento y sigue siendo perfectamente accesible.
-
-También me parece una excelente puerta de entrada al género. Enseña bien, no intimida y tiene suficiente profundidad para mantenerte pensando sin convertirse en una enciclopedia militar con botones o una hoja de Excel de Paradox que accidentalmente aprendió a emitir sonido.
+Sé que existe un remake, pero después de terminar el original no sentí que lo necesitara. El juego de GBA sigue siendo perfectamente jugable hoy. Puedes correrlo en hardware original, PSP liberada, móvil o cualquier portátil china con nombre de medicamento, y la experiencia se mantiene sólida. Eso habla bien de su diseño base: no depende de nostalgia pura ni de tolerancia retro. Sigue funcionando porque sus reglas, ritmo y presentación eran buenos desde el inicio.
 
 ## Veredicto
 
-*Advance Wars* parece casual hasta que terminas planeando invasiones mientras almuerzas.
+*Advance Wars* parece casual hasta que terminas planeando invasiones mientras almuerzas. Su mayor logro es tomar reglas fáciles de entender y construir con ellas mapas que exigen atención, paciencia y creatividad. La economía, el terreno, las unidades, las condiciones de victoria y los poderes de CO permiten desarrollar un estilo propio sin convertir el juego en una enciclopedia militar.
 
-Lo mejor que hace es tomar reglas fáciles de entender y convertirlas en mapas que exigen atención, paciencia y creatividad. La economía, el terreno, las unidades, las condiciones de victoria y los poderes de CO permiten desarrollar un estilo propio sin llenar la pantalla de sistemas por puro complejo de arquitecto cloud.
+Lo mejor está en esa sensación de aprender constantemente. Cada mapa te obliga a mirar mejor, calcular mejor y aceptar que una mala decisión puede tener consecuencias varios turnos después. Cuando una estrategia sale bien, se siente ganada. Cuando sale mal, casi siempre puedes identificar el error, y eso hace que volver a intentarlo no se sienta como pérdida de tiempo.
 
-Lo peor es la irregularidad de la IA y cómo algunos mapas con niebla de guerra pueden sentirse más injustos que inteligentes.
+Lo peor está en la irregularidad de la IA y en algunos mapas con niebla de guerra, donde el juego puede sentirse menos táctico y más tramposo de lo necesario. También creo que el tramo final sube bastante la presión, aunque entiendo que parte de su gracia está justamente en exigirte todo lo aprendido.
 
-Me hizo sentir un genio cuando conseguía colar infantería por la retaguardia, robar fábricas y limitar la producción enemiga.
-
-Me hizo sentir un imbécil cuando perdía una unidad esencial y tardaba exactamente un segundo en entender que acababa de condenar toda la operación.
-
-Se lo recomendaría a cualquiera que quiera entrar al género, a quien disfrute la estrategia accesible y a todo enfermo de los mapitas que quiera interpretar a Kongming desde una portátil.
-
-Terminé con ganas de jugar *Advance Wars 2*, aunque no inmediatamente. Intento diversificar mi backlog y no quiero pasar los próximos seis meses convertido en funcionario de Orange Star con horario extendido y sin pago de horas extras.
+Se lo recomendaría a cualquiera que quiera entrar al género, a quien disfrute la estrategia accesible y a quien busque un táctico portátil que no necesite veinte sistemas encima para ser profundo. Terminé con ganas de jugar *Advance Wars 2*, aunque no inmediatamente. No quiero pasar los próximos seis meses convertido en funcionario de Orange Star con horario extendido y sin pago de horas extras.
 
 Mi resumen final sería este:
 
-> Lo que carreaban Kongming y Yang Wen-li, ¿no? Acá mandas un bomber a reventar tanques por el frente, cuelas un soldado por la retaguardia para robarle medio país al enemigo y por cinco minutos te sientes un genio militar. Luego recuerdas que ambos eran monstruos de la estrategia y tú apenas eres un gil con presupuesto de Defensa. Pero justamente ahí está la gracia de *Advance Wars*: con reglas simples te hace pensar, improvisar y sentir que cada victoria realmente te la ganaste.
+> *Advance Wars* funciona porque entiende muy bien su escala. No necesita ser enorme ni complicadísimo para hacerte pensar. Con reglas simples, buenos mapas y comandantes con identidad, logra que cada victoria se sienta trabajada y que cada error te enseñe algo. Es accesible, táctico, claro y mucho más sólido de lo que su estética colorida podría hacer pensar.
 
 **Calificación: 3.5/5**
