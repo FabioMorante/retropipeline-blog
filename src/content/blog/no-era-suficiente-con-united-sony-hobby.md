@@ -4,11 +4,9 @@ description: "Un rant sobre días duros, Manchester United, Messi, Sony, juegos 
 author: "AzaFrost"
 heroImage: "../../../public/img/united-sony-hobby/hero.png"
 pubDate: 2026-07-01
-updatedDate: 2026-07-01
+updatedDate: 2026-08-14
 tags: ["rant", "futbol", "manchester united", "videojuegos", "playstation", "coleccionismo", "drm"]
 ---
-
-# No era suficiente con United, ahora también Sony quiere matarme el hobby
 
 Estos días han sido duros de una forma bien específica: como caer de lleno sobre tu espalda en un salto plano, quedarte sin aire después de eso y encima terminar con lesiones en la lumbar. Hace no mucho tuve varios cambios en mi vida, decisiones duras que me han llevado a estar algo más alejado de mi familia (que ya lo estaba, pero ahora más), y la presión monetaria me carcome. Las cosas a mi alrededor están como en el limbo, entre ok y en el abismo. Creo que fue arriesgado, no voy a mentir, pero valdrá la pena si resisto un toque lo económico al inicio.
 

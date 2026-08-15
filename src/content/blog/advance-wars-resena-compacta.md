@@ -18,7 +18,7 @@ tags: ["review", "gba", "strategy", "retro gaming"]
 
 ## Cómo llegué a Advance Wars
 
-Llegué a *Advance Wars* porque sigo atrapado en esa fase donde quiero jugar todo lo retro que huela a juego de culto, recomendación clásica o título que aparece una y otra vez cuando la gente habla de lo mejor de una consola. En el caso de GBA, era imposible no cruzarme con este juego. Siempre aparece en listas, comentarios, foros y conversaciones sobre estrategia portátil, así que tocaba comprobar cuánto era mérito real y cuánto nostalgia colectiva de gente criada a punta de pilas AA.
+Llegué a *Advance Wars* porque sigo en mi fase donde quiero jugar todo lo retro que huela a juego de culto, recomendación clásica o título que aparece una y otra vez cuando la gente habla de lo mejor de una consola. En el caso de GBA, era imposible no cruzarme con este juego. Siempre aparece en listas, comentarios, foros y conversaciones sobre estrategia portátil, así que tocaba comprobar cuánto era mérito real y cuánto nostalgia colectiva de gente criada a punta de pilas AA.
 
 También ayudó que siempre me han gustado los juegos de estrategia militar y los mapitas donde uno mueve unidades, administra recursos y empieza a creerse brillante por capturar una fábrica en el momento correcto. No esperaba una experiencia especialmente dura. Por su estética colorida, sus comandantes caricaturescos y su tono de guerra de juguete, pensaba que iba a encontrar algo bastante ligero, casi un táctico casual para pasar el rato.
 
